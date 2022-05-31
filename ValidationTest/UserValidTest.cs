@@ -33,5 +33,12 @@ namespace ValidationTest
             bool Val = valid.ValidMobile("91 7898625487");
             Assert.IsTrue(Val);
         }
+            [Test]
+            public void User_Valid_Password_Minmum_Eight_Char()
+            {
+                Validation valid = new Validation();
+                bool Val = valid.ValidPasswordMinChar("Mohan123");
+                Assert.IsTrue(Val);
+            }
+        }
     }
-}

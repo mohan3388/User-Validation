@@ -11,7 +11,8 @@ namespace UserRegistration
     {
         public const string Name_Pattern = "^[A-Z]{1}[A-Za-z]{3,}$";
         public const string Email_Pattern = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
-        public const string Mobile_Pattern = "[9]{1}[1]{1}/s[0-9]{10}";
+        public const string Mobile_Pattern = "^[91]{2}/s[0-9]{10}$";
+        public const string Password_Min_8Char = "^[0-9a-zA-Z]{8,}$";
         public bool ValidName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -41,6 +42,14 @@ namespace UserRegistration
             if (Regex.IsMatch(mobile, Mobile_Pattern)) ;
             {
                 Console.WriteLine("Valid mobile: " + mobile);
+                return true;
+            }
+        }
+        public bool ValidPasswordMinChar(string password)
+        {
+            if (Regex.IsMatch(password, Password_Min_8Char)) ;
+            {
+                Console.WriteLine("Valid mobile: " + password);
                 return true;
             }
         }
