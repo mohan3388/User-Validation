@@ -14,7 +14,7 @@ namespace UserRegistration
         public const string Mobile_Pattern = "^[91]{2}/s[0-9]{10}$";
         public const string Password_Min_8Char = "^[0-9a-zA-Z]{8,}$";
         public const string Password_Include_UpperCase = "^[A-Z]{1}0-9a-zA-Z]{7,}";
-
+        public const string Password_Include_Numeric = "^[0-9a-zA-Z]{7,}[0-9]{1}";
         public bool ValidName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -60,6 +60,14 @@ namespace UserRegistration
             if (Regex.IsMatch(password, Password_Include_UpperCase)) ;
             {
                 Console.WriteLine("Valid password Include Uppercase: " + password);
+                return true;
+            }
+        }
+        public bool ValidPasswordIncludeNumeric(string password)
+        {
+            if (Regex.IsMatch(password, Password_Include_Numeric)) ;
+            {
+                Console.WriteLine("Valid password Include Numeric: " + password);
                 return true;
             }
         }
