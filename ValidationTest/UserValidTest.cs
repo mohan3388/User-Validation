@@ -26,5 +26,12 @@ namespace ValidationTest
             bool Val = valid.ValidLastName("Mohan@123gmail.com");
             Assert.IsTrue(Val);
         }
+        [Test]
+        public void User_Valid_Mobile()
+        {
+            Validation valid = new Validation();
+            bool Val = valid.ValidMobile("91 7898625487");
+            Assert.IsTrue(Val);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace UserRegistration
     {
         public const string Name_Pattern = "^[A-Z]{1}[A-Za-z]{3,}$";
         public const string Email_Pattern = "^[0-9a-zA-Z]+[.+-_]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}";
+        public const string Mobile_Pattern = "[9]{1}[1]{1}/s[0-9]{10}";
         public bool ValidName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -31,7 +32,15 @@ namespace UserRegistration
         {
             if (Regex.IsMatch(email, Email_Pattern)) ;
             {
-                Console.WriteLine("Valid e: " + email);
+                Console.WriteLine("Valid email: " + email);
+                return true;
+            }
+        }
+        public bool ValidMobile(string mobile)
+        {
+            if (Regex.IsMatch(mobile, Mobile_Pattern)) ;
+            {
+                Console.WriteLine("Valid mobile: " + mobile);
                 return true;
             }
         }
