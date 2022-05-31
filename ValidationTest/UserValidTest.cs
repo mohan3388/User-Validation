@@ -40,5 +40,12 @@ namespace ValidationTest
                 bool Val = valid.ValidPasswordMinChar("Mohan123");
                 Assert.IsTrue(Val);
             }
+        [Test]
+        public void User_Valid_Password_Include_One_Uppercase()
+        {
+            Validation valid = new Validation();
+            bool Val = valid.ValidPasswordIncludeUpperCase("Mohan123");
+            Assert.IsTrue(Val);
         }
+    }
     }
