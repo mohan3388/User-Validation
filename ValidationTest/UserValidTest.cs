@@ -19,5 +19,12 @@ namespace ValidationTest
             bool Val = valid.ValidLastName("Sahu");
             Assert.IsTrue(Val);
         }
+        [Test]
+        public void User_Valid_Email()
+        {
+            Validation valid = new Validation();
+            bool Val = valid.ValidLastName("Mohan@123gmail.com");
+            Assert.IsTrue(Val);
+        }
     }
 }
