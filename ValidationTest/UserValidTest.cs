@@ -54,5 +54,12 @@ namespace ValidationTest
             bool Val = valid.ValidPasswordIncludeNumeric("Rajeshs8");
             Assert.IsTrue(Val);
         }
+        [Test]
+        public void User_Valid_Password_Include_One_Special_Char()
+        {
+            Validation valid = new Validation();
+            bool Val = valid.ValidPasswordIncludeSpecialChar("Mohans#8");
+            Assert.IsTrue(Val);
+        }
     }
     }
