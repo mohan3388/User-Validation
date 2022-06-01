@@ -61,5 +61,12 @@ namespace ValidationTest
             bool Val = valid.ValidPasswordIncludeSpecialChar("Mohans#8");
             Assert.IsTrue(Val);
         }
+        [Test]
+        public void User_Valid_Email_Use_All_Samples()
+        {
+            Validation valid = new Validation();
+            bool Val = valid.ValidEmailAllSamples("Mohan145@gmail.com");
+            Assert.IsTrue(Val);
+        }
     }
     }

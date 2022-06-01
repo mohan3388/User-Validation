@@ -16,6 +16,7 @@ namespace UserRegistration
         public const string Password_Include_UpperCase = "^[A-Z]{1}0-9a-zA-Z]{7,}$";
         public const string Password_Include_Numeric = "^[0-9a-zA-Z]{7,}[0-9]{1}$";
         public const string Password_Include_Special_Char = "^[0-9a-zA-Z]{7,}[!*@#$%^&+=]{1}[0-9]{1}$";
+        public const string Email_All_Samples = "^[0-9a-zA-z]+([._+-]?[0-9a-zA-z]+)@[0-9a-zA-z]+.([c]{1}[o]{1}[m]{1})([n]{1}[e]{1}[t]{1})[,]([a]{1}[u]{1})([.][c]{1}[o]{1}[m]{1})$";
         public bool ValidName(string name)
         {
             if (Regex.IsMatch(name, Name_Pattern)) ;
@@ -77,6 +78,14 @@ namespace UserRegistration
             if (Regex.IsMatch(password, Password_Include_Special_Char)) ;
             {
                 Console.WriteLine("Valid password Include special char: " + password);
+                return true;
+            }
+        }
+        public bool ValidEmailAllSamples(string email)
+        {
+            if (Regex.IsMatch(email, Email_All_Samples)) ;
+            {
+                Console.WriteLine("Valid password Include special char: " + email);
                 return true;
             }
         }
